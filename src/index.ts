@@ -26,7 +26,7 @@ export default {
 				const rawLength = response.headers.get("Content-Length");
 				if (rawLength) {
 					const length = parseInt(rawLength);
-					if (length) {
+					if (!isNaN(length)) {
 						console.info(`${pathname}: Response ${length} bytes`)
 						return new Response(body);
 					} else {
