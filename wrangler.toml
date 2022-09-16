@@ -1,3 +1,4 @@
+name = "file-server-cf-worker"
 main = "src/index.ts"
 compatibility_date = "2022-09-16"
 node_compat = true
