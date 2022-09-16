@@ -1,6 +1,6 @@
 # file-server-cf-worker
 
-Replace [sya-ri/file-server](https://github.com/sya-ri/file-server) by using Cloudflare workers.
+Replace [sya-ri/file-server](https://github.com/sya-ri/file-server) by using Cloudflare Workers.
 It's like a proxy for WebDAV and makes it easy to share files.
 
 ## How to deploy
