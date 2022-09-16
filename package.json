@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "wrangler dev src/index.ts",
     "deploy": "wrangler publish src/index.ts"
   },
   "devDependencies": {
