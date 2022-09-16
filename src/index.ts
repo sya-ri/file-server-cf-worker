@@ -11,17 +11,33 @@ export default {
 		// ctx: ExecutionContext
 	): Promise<Response> {
 		const { pathname } = new URL(request.url);
-		const response = await fetch(
-			`${env.WEBDAV_URL}/${pathname}`,
-			{
-				method: 'GET',
-				headers: {
-					Authorization: "Basic " + btoa(`${env.WEBDAV_USER}:${env.WEBDAV_PASS}`),
+		if (pathname && pathname !== '/') {
+			const response = await fetch(
+				`${env.WEBDAV_URL}/${pathname}`,
+				{
+					method: 'GET',
+					headers: {
+						Authorization: "Basic " + btoa(`${env.WEBDAV_USER}:${env.WEBDAV_PASS}`),
+					}
 				}
+			);
+			if (response.ok) {
+				const body = response.body;
+				const rawLength = response.headers.get("Content-Length");
+				if (rawLength) {
+					const length = parseInt(rawLength);
+					if (length) {
+						console.info(`${pathname}: Response ${length} bytes`)
+						return new Response(body);
+					} else {
+						console.warn(`${pathname}: Content-Length is not number (${rawLength})`)
+					}
+				} else {
+					console.warn(`${pathname}: Content-Length not found`)
+				}
+			} else {
+				console.warn(`${pathname}: Fetch error (${response.status}: ${response.statusText})`)
 			}
-		);
-		if (response.ok) {
-			return new Response(response.body);
 		}
 		return new Response("File not found", { status: 404 });
 	},
