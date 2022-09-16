@@ -6,5 +6,14 @@
   "repository": "https://github.com/sya-ri/file-server-cf-worker",
   "author": "sya-ri",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler publish"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.16.0",
+    "typescript": "^4.8.3",
+    "wrangler": "2.1.4"
+  }
 }
