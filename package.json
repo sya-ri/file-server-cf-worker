@@ -1,0 +1,10 @@
+{
+  "name": "file-server-cf-worker",
+  "version": "1.0.0",
+  "description": "Personal file sharing system using URL (f.s7a.dev)",
+  "main": "index.js",
+  "repository": "https://github.com/sya-ri/file-server-cf-worker",
+  "author": "sya-ri",
+  "license": "MIT",
+  "private": true
+}
