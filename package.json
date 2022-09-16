@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler publish"
+    "deploy": "wrangler publish src/index.ts"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.16.0",
