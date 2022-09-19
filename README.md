@@ -30,11 +30,5 @@ Add variables on the worker settings page.
 
 ### 3. (optional) Use custom domains
 
-※ `f.s7a.dev` as an example.
-
-1. Open domain settings page.
-2. Select "Workers" from sidebar.
-3. Press "Add route".
-   ![Worker route setting](images/add-workers-route.png)
-4. Add "DNS record".
-   ![Add DNS record](images/add-dns-record.png)
+1. Open "Triggers" on the worker settings page.
+2. Press "Add Custom Domain".
